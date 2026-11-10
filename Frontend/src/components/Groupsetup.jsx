@@ -41,13 +41,14 @@ export default function GroupQuizSetupPage({ onRoomCreated, subjects = MOCK_SUBJ
       host: user?.name || user?.email || 'Guest Host',
       createdAt: new Date().toISOString(),
     };
-
+      console.log("here at 44")
       socket.once("room-created", (roomCode) => {
+        console.log("room-created called")
         setIsCreating(false);
        navigate(`/quiz/room/${roomCode}`);
       });
 
-      socket.once("room-error", (message) => {
+      socket.once("room-creation-error", (message) => {
        setIsCreating(false);
        console.error(message);
       });

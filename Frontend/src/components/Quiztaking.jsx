@@ -96,12 +96,12 @@ export default function QuizTakingPage({ onFinishQuiz }) {
 
         if (isDemo) {
           response = await axios.post(
-            'http://localhost:3000/api/quiz/submitDemo',
+            `${import.meta.env.VITE_API_URL}/quiz/submitDemo`,
             payLoad
           );
         } else {
           response = await axios.post(
-            'http://localhost:3000/api/quiz/submit',
+            `${import.meta.env.VITE_API_URL}/quiz/submit`,
             payLoad,
             { withCredentials: true }
           );

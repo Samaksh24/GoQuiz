@@ -33,7 +33,7 @@ export default function RegisterPage({ onRegisterSuccess, onNavigateToLogin }) {
 
     setErrors({});
     try{
-        const response = await axios.post('http://localhost:3000/api/auth/register',{name,email,password},{withCredentials : true})
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`,{name,email,password},{withCredentials : true})
         setMessage({text:'User Registration Successful', type:'success'})
 
         setTimeout(()=>{

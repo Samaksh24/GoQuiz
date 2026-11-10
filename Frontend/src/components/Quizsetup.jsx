@@ -44,7 +44,7 @@ export default function QuizSetupPage({ onStartQuiz, subjects = MOCK_SUBJECTS })
 
       if (!isDemo) {
         response = await axios.post(
-          'http://localhost:3000/api/quiz/start',
+          `${import.meta.env.VITE_API_URL}/quiz/start`,
           quizConfig,
           { withCredentials: true }
         );
@@ -53,7 +53,7 @@ export default function QuizSetupPage({ onStartQuiz, subjects = MOCK_SUBJECTS })
         sessionStorage.setItem('quizQuestions', JSON.stringify(response.data.questions));
       } else {
         response = await axios.post(
-          'http://localhost:3000/api/quiz/demo',
+          `${import.meta.env.VITE_API_URL}/quiz/demo`,
           { subject: selectedSubject, count: Number(questionCount) }
         );
 

@@ -35,7 +35,7 @@ export default function QuizHistoryPage({ onStartNewQuiz }) {
   useEffect(() => {
     const getHistory = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/quiz/history', {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/quiz/history`, {
           withCredentials: true,
         });
 
