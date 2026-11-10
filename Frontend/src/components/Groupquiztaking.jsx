@@ -8,7 +8,7 @@ import React, {
 import { useParams, useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import Header from "../components/Header";
-import ProgressBar from "../components/ProgressBar";
+import ProgressBar from "../components/Progressbar";
 import OptionButton from "../components/OptionButton";
 import socket from "../Socket.js";
 
