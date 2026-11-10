@@ -2,6 +2,7 @@
 import bcrypt from "bcrypt"
 import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
+const isProd = process.env.NODE_ENV === 'production';
 
 export const register = async(req,res)=>{
     try{
